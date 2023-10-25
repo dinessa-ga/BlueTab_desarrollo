@@ -4,7 +4,6 @@ import './index.css';
 // import App from './App';
 import Prueba1FU from './components/Prueba1FU'
 import reportWebVitals from './reportWebVitals';
-import FileUpload from './components/FileUdload';
 import DisplayData from './components/DisplayData';
 
 
@@ -13,7 +12,6 @@ root.render(
   <React.StrictMode>
  
    <Prueba1FU/>
-   <FileUpload/>
    <DisplayData/>
   </React.StrictMode>
 );

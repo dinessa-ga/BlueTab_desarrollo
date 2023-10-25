@@ -6,11 +6,10 @@ export default function DisplayData() {
   const [pdfURL, setPdfURL] = useState('');
 
   useEffect(() => {
-    const apiUrl = '/pdfs/'; // Ruta base
+    const apiUrl = '/pdfs/'; 
     axios.get(apiUrl + 'CURRICULUM LUBER ALFREDO PILAY MADRIL-1.pdf') 
       .then((response) => {
         setData(response.data);
-        // Resto del código...
       })
       .catch((error) => {
         console.error('Error al obtener datos:', error);
