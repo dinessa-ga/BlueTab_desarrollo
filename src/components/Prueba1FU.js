@@ -53,8 +53,10 @@ export default function UploadCV() {
       experience_lastMonth: data.experience_lastMonth,
       experience_lastYear: data.experience_lastYear,
       knowledge: data.knowledge,
-    });
+    }));
   };
+  
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
