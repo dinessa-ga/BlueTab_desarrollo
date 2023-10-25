@@ -3,17 +3,46 @@
     justify-content: center;
 }
 
-#name{
+.group-title{
+    color: var(--Naranja-Bluetab, #E05206);
+    font-family: Titillium Web;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+    letter-spacing: -0.264px;
+
+}
+#formCv input, textarea{
+    
+    border-radius: 8px;
+    border: 1px solid var(--Gris-claro-Bluetab, #DAD7CB);
+    background: var(--Blanco, #FFF);
+}
+
+.group-large-input{
     display: flex;
-width: 712px;
-height: 38px;
-padding: 8px;
-align-items: flex-start;
-gap: 10px;
-flex-shrink: 0;
+    width: 712px;
+    height: 38px;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
 
-border-radius: 8px;
-border: 1px solid var(--Gris-claro-Bluetab, #DAD7CB);
-background: var(--Blanco, #FFF);
+#summary{
+    display: flex;
+    width: 712px;
+    height: 114px;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
 
+.container-date{
+
+    width: 712px;
+    height: 38px;
+    flex-shrink: 0;
 }
