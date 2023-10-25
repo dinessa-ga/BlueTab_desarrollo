@@ -7,7 +7,7 @@ export default function DisplayData() {
 
   useEffect(() => {
     const apiUrl = '/pdfs/'; 
-    axios.get(apiUrl + 'CURRICULUM LUBER ALFREDO PILAY MADRIL-1.pdf') 
+    axios.get(apiUrl + '.pdf') 
       .then((response) => {
         setData(response.data);
       })

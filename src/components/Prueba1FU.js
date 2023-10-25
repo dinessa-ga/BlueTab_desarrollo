@@ -15,20 +15,25 @@ export default function UploadCV() {
   const [apiData, setApiData] = useState(null);
 
   const updateFormDataFromPDF = (data) => {
-    setFormData({
+    setFormData((prevData) => ({
+      ...prevData,
       name: data.name,
-    });
+      // Puedes agregar más campos aquí si es necesario.
+    }));
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const saveDataToAPI = async () => {
-    
     try {
       console.log('Datos guardados en el servidor con éxito.');
+      // Aquí puedes enviar 'formData' al servidor con Axios u otra librería.
     } catch (error) {
       console.error('Error al guardar los datos en el servidor:', error);
     }
@@ -36,6 +41,7 @@ export default function UploadCV() {
 
   useEffect(() => {
     if (apiData) {
+      // Realizar acciones adicionales si es necesario.
     }
   }, [apiData]);
 
@@ -43,7 +49,7 @@ export default function UploadCV() {
     <div id='formCv'>
       <h1>Subir CV</h1>
       <FileUpload updateFormData={updateFormDataFromPDF} />
-
+      {console.log(formData)}
       <form>
         <label htmlFor="name">Nombre:</label>
         <input

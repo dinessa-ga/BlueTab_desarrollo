@@ -37,6 +37,16 @@ const FileUpload = ({ updateFormData }) => {
       console.error('Error al guardar el PDF en el servidor:', error);
     }
   };
+  function onDocumentLoadSuccess(page) {
+    page.getTextContent().then(data =>{
+      let text = '';
+      console.log(data);
+      data.items.forEach(obj => {
+        text += obj.str;
+      });
+      console.log(text)
+    });
+  }
 
   return (
     <div>
@@ -48,8 +58,8 @@ const FileUpload = ({ updateFormData }) => {
       />
       {pdfData && (
         <div>
-          <Document file={pdfData}>
-            <Page pageNumber={1} />
+          <Document  file={pdfData}>
+            <Page onLoadSuccess={onDocumentLoadSuccess} pageNumber={1} />
           </Document>
         </div>
       )}
