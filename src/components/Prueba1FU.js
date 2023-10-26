@@ -88,7 +88,7 @@ export default function UploadCV() {
       <h1>Subir CV</h1>
       <FileUpload updateFormData={updateFormDataFromPDF} />
         {console.log(formData)}
-      <form>
+      <form className="container-form">
         <label htmlFor="name" className="group-title">Nombre</label>
         <input
           type="text"
@@ -107,27 +107,29 @@ export default function UploadCV() {
           onChange={handleChange}
         />
         <section>
-          <p className="group-title">Educación</p>
-          <label htmlFor="education_institution">Institución Educativa</label>
-          <input
-            type="text"
-            className="group-large-input"
-            id="education_institution"
-            name="education_institution"
-            value={formData.education_institution}
-            onChange={handleChange}
-          />
-    
-          <label htmlFor="education_institution_title">Título de Educación</label>
-          <input
-            type="text"
-            className="group-large-input"
-            id="education_institution_title"
-            name="education_institution_title"
-            value={formData.education_institution_title}
-            onChange={handleChange}
-          />
-          
+          <label className="group-title">Educación</label>
+            <div className="group-main-inputs">
+                <input
+                type="text"
+                className="group-large-input"
+                placeholder="Institución Educativa"
+                id="education_institution"
+                name="education_institution"
+                value={formData.education_institution}
+                onChange={handleChange}
+              />
+        
+              <input
+                type="text"
+                className="group-large-input"
+                placeholder="Título"
+                id="education_institution_title"
+                name="education_institution_title"
+                value={formData.education_institution_title}
+                onChange={handleChange}
+              />
+            </div>
+
           <label htmlFor="education_startDate">Fecha de inicio</label>
           <div className="container-date">
             <input
