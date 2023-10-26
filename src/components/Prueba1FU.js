@@ -106,65 +106,72 @@ export default function UploadCV() {
           value={formData.summary}
           onChange={handleChange}
         />
-        <p className="group-title">Educación</p>
-        <label htmlFor="education_institution">Institución Educativa</label>
-        <input
-          type="text"
-          className="group-large-input"
-          id="education_institution"
-          name="education_institution"
-          value={formData.education_institution}
-          onChange={handleChange}
-        />
-  
-        <label htmlFor="education_institution_title">Título de Educación</label>
-        <input
-          type="text"
-          className="group-large-input"
-          id="education_institution_title"
-          name="education_institution_title"
-          value={formData.education_institution_title}
-          onChange={handleChange}
-        />
-        
-        <label htmlFor="education_startDate">Fecha de inicio</label>
-        <div className="container-date">
+        <section>
+          <p className="group-title">Educación</p>
+          <label htmlFor="education_institution">Institución Educativa</label>
           <input
             type="text"
-            id="education_startMonth"
-            name="education_startMonth"
-            value={formData.education_startMonth}
-            onChange={handleChange}
-          />
-          
-          <input
-            type="text"
-            id="education_startYear"
-            name="education_startYear"
-            value={formData.education_startYear}
-            onChange={handleChange}
-          />
-        </div>
-
-        <label htmlFor="education_lastMonth">Fecha de finalización</label>
-        <div className="container-date">
-          <input
-            type="text"
-            id="education_lastMonth"
-            name="education_lastMonth"
-            value={formData.education_lastMonth}
+            className="group-large-input"
+            id="education_institution"
+            name="education_institution"
+            value={formData.education_institution}
             onChange={handleChange}
           />
     
+          <label htmlFor="education_institution_title">Título de Educación</label>
           <input
             type="text"
-            id="education_lastYear"
-            name="education_lastYear"
-            value={formData.education_lastYear}
+            className="group-large-input"
+            id="education_institution_title"
+            name="education_institution_title"
+            value={formData.education_institution_title}
             onChange={handleChange}
           />
-        </div>  
+          
+          <label htmlFor="education_startDate">Fecha de inicio</label>
+          <div className="container-date">
+            <input
+              type="text"
+              className="input-date"
+              id="education_startMonth"
+              name="education_startMonth"
+              value={formData.education_startMonth}
+              onChange={handleChange}
+            />
+            
+            <input
+              type="text"
+              className="input-date"
+              id="education_startYear"
+              name="education_startYear"
+              value={formData.education_startYear}
+              onChange={handleChange}
+            />
+          </div>
+
+          <label htmlFor="education_lastMonth">Fecha de finalización</label>
+          <div className="container-date">
+            <input
+              type="text"
+              className="input-date"
+              id="education_lastMonth"
+              name="education_lastMonth"
+              value={formData.education_lastMonth}
+              onChange={handleChange}
+            />
+      
+            <input
+              type="text"
+              className="input-date"
+              id="education_lastYear"
+              name="education_lastYear"
+              value={formData.education_lastYear}
+              onChange={handleChange}
+            />
+          </div>  
+        </section>
         
+
         <p className="group-title">Certificaciones y cursos</p>
         <label htmlFor="certification_company">Empresa de Certificación</label>
         <input
@@ -189,17 +196,17 @@ export default function UploadCV() {
         <div className="container-date">
           <input
             type="text"
-            id="education_startMonth"
-            name="education_startMonth"
-            value={formData.education_startMonth}
+            id="certification_startMonth"
+            name="certification_startMonth"
+            value={formData.certification_startMonth}
             onChange={handleChange}
           />
           
           <input
             type="text"
-            id="education_startYear"
-            name="education_startYear"
-            value={formData.education_startYear}
+            id="certification_startYear"
+            name="certificationn_startYear"
+            value={formData.certification_startYear}
             onChange={handleChange}
           />
         </div>
@@ -208,17 +215,17 @@ export default function UploadCV() {
         <div className="container-date">
           <input
             type="text"
-            id="education_lastMonth"
-            name="education_lastMonth"
-            value={formData.education_lastMonth}
+            id="certification_lastMonth"
+            name="certification_lastMonth"
+            value={formData.certification_lastMonth}
             onChange={handleChange}
           />
     
           <input
             type="text"
-            id="education_lastYear"
-            name="education_lastYear"
-            value={formData.education_lastYear}
+            id="certification_lastYear"
+            name="certification_lastYear"
+            value={formData.certification_lastYear}
             onChange={handleChange}
           />
         </div>  
@@ -248,36 +255,36 @@ export default function UploadCV() {
         <div className="container-date">
           <input
             type="text"
-            id="education_startMonth"
-            name="education_startMonth"
-            value={formData.education_startMonth}
+            id="experience_startMonth"
+            name="experience_startMonth"
+            value={formData.experience_startMonth}
             onChange={handleChange}
           />
           
           <input
             type="text"
-            id="education_startYear"
-            name="education_startYear"
-            value={formData.education_startYear}
+            id="experience_startYear"
+            name="experience_startYear"
+            value={formData.experience_startYear}experience
             onChange={handleChange}
           />
         </div>
 
-        <label htmlFor="education_lastMonth">Fecha de finalización</label>
+        <label htmlFor="experience_lastMonth">Fecha de finalización</label>
         <div className="container-date">
           <input
             type="text"
-            id="education_lastMonth"
-            name="education_lastMonth"
-            value={formData.education_lastMonth}
+            id="experience_lastMonth"
+            name="experience_lastMonth"
+            value={formData.experience_lastMonth}
             onChange={handleChange}
           />
     
           <input
             type="text"
-            id="education_lastYear"
-            name="education_lastYear"
-            value={formData.education_lastYear}
+            id="experience_lastYear"
+            name="experience_lastYear"
+            value={formData.experience_lastYear}certification
             onChange={handleChange}
           />
         </div>  
