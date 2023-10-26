@@ -1,55 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import FileUpload from './FileUdload';
+import base from './base';
 
-export default function UploadCV() {
+
+
+const UploadCV = () => {
   const [formData, setFormData] = useState({
     name: '',
-    address: '',
-    identification: '',
-    experience: '',
-    technicalSkills: '',
-    references: '',
-    summary: '',
   });
-
-  const [apiData, setApiData] = useState(null);
 
   const updateFormDataFromPDF = (data) => {
     setFormData((prevData) => ({
       ...prevData,
       name: data.name,
-      // Puedes agregar más campos aquí si es necesario.
     }));
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    
   };
 
-  const saveDataToAPI = async () => {
-    try {
-      console.log('Datos guardados en el servidor con éxito.');
-      // Aquí puedes enviar 'formData' al servidor con Axios u otra librería.
-    } catch (error) {
-      console.error('Error al guardar los datos en el servidor:', error);
-    }
+  const saveDataToAirtable = (data) => {
+   
+    base('Bluetab').create([
+      {
+        fields: {
+          name: data.name,
+          
+        },
+      },
+    ], 
+    
+    function (err, records) {
+      if (err) {
+        console.error('Error al guardar datos en Airtable:', err);
+        return;
+      }
+      console.log('Datos guardados en Airtable con éxito:', records);
+    });
   };
-
-  useEffect(() => {
-    if (apiData) {
-      // Realizar acciones adicionales si es necesario.
-    }
-  }, [apiData]);
 
   return (
     <div id='formCv'>
       <h1>Subir CV</h1>
-      <FileUpload updateFormData={updateFormDataFromPDF} />
-      {console.log(formData)}
+      <FileUpload updateFormData={updateFormDataFromPDF} saveDataToAirtable={saveDataToAirtable} />
       <form>
         <label htmlFor="name">Nombre:</label>
         <input
@@ -57,61 +51,12 @@ export default function UploadCV() {
           id="name"
           name="name"
           value={formData.name}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="address">Dirección:</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          value={formData.address}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="identification">Identificación:</label>
-        <input
-          type="text"
-          id="identification"
-          name="identification"
-          value={formData.identification}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="experience">Experiencia Laboral:</label>
-        <textarea
-          id="experience"
-          name="experience"
-          value={formData.experience}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="technicalSkills">Habilidades Técnicas:</label>
-        <textarea
-          id="technicalSkills"
-          name="technicalSkills"
-          value={formData.technicalSkills}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="references">Referencias:</label>
-        <textarea
-          id="references"
-          name="references"
-          value={formData.references}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="summary">Resumen:</label>
-        <textarea
-          id="summary"
-          name="summary"
-          value={formData.summary}
-          onChange={handleChange}
+          onChange={handleChange} 
         />
       </form>
-
-      <button onClick={saveDataToAPI}>Guardar en el servidor</button>
+      <button onClick={() => saveDataToAirtable(formData)}>Guardar en Airtable</button> 
     </div>
   );
-}
+};
+
+export default UploadCV;
