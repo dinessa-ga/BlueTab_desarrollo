@@ -156,7 +156,7 @@ export default function UploadCV() {
             />
           </div>
 
-          <label htmlFor="education_lastMonth" className="label-date">Fecha de finalización</label>
+          <label htmlFor="education_lastMonth" >Fecha de finalización</label>
           <div className="container-date">
             <input
               type="text"
