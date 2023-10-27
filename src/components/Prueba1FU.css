@@ -5,6 +5,32 @@
     
 }
 
+section{
+    margin: 2rem 0 0 0;
+    
+}
+
+.input-group{
+    margin: 0.8rem 0 0 0; /* Para establecer margin top luego de cada input-group */
+    display: grid;
+    grid-row-gap: 0.4rem; /* Espacio vertical entre elementos en .input-group */
+
+}
+
+
+.group-large-input{
+    display: flex;
+    width: 44.5rem;
+    height: 2.375rem;
+    padding: 0.5rem;
+    align-items: flex-start;
+    gap: 0.625rem;
+    flex-shrink: 0;
+   
+
+
+}
+
 .group-title{
     color: var(--Naranja-Bluetab, #E05206);
     font-size: 1.5rem;
@@ -12,8 +38,9 @@
     font-weight: 600;
     line-height: 150%; /* 2.25rem */
     letter-spacing: -0.0165rem;
-
+    
 }
+
 #formCv input, textarea{
     border-radius: 0.5rem;
     border: 1px solid var(--Gris-claro-Bluetab, #DAD7CB);
@@ -28,16 +55,6 @@
     letter-spacing: -0.00963rem;
 }
 
-.group-large-input{
-    display: flex;
-    width: 44.5rem;
-    height: 2.375rem;
-    padding: 0.5rem;
-    align-items: flex-start;
-    gap: 0.625rem;
-    flex-shrink: 0;
-}
-
 #summary{
     display: flex;
     width: 44.5rem;
@@ -47,12 +64,10 @@
     gap: 0.625rem;
     flex-shrink: 0;
 }
-section{
-    margin: 1rem 0 1rem 0;
-}
 
-.group-main-inputs{
-    margin: 0.6rem 0 0.6rem 0;
+.label-Date{
+    margin: 4rem 0 0 0; /* Para establecer margin  a los label de fechas */
+
 }
 
 .container-date{
@@ -68,7 +83,7 @@ section{
     flex-shrink: 0;
 }
 
-/* Establece un margen derecho en el primer input y un margen izquierdo en el segundo input */
+/* Establece un margen derecho en el primer input*/
 .date:first-child {
     margin-right: 0.41rem; /* Ajusta el valor según tu preferencia de espacio */
 }

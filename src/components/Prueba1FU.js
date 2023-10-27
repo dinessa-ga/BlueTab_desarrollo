@@ -55,8 +55,8 @@ export default function UploadCV() {
       knowledge: data.knowledge,
     }));
   };
-  
-  
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -87,66 +87,139 @@ export default function UploadCV() {
     <div id="formCv">
       <h1>Subir CV</h1>
       <FileUpload updateFormData={updateFormDataFromPDF} />
-        {console.log(formData)}
+      {console.log(formData)}
       <form className="container-form">
-        <label htmlFor="name" className="group-title">Nombre</label>
-        <input
-          type="text"
-          className="group-large-input"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-  
-        <label htmlFor="summary" className="group-title">Resumen</label>
-        <textarea
-          id="summary"
-          name="summary"
-          value={formData.summary}
-          onChange={handleChange}
-        />
         <section>
-          <label className="group-title">Educación</label>
-            <div className="group-main-inputs">
-                <input
-                type="text"
-                className="group-large-input"
-                placeholder="Institución Educativa"
-                id="education_institution"
-                name="education_institution"
-                value={formData.education_institution}
-                onChange={handleChange}
-              />
+          <label htmlFor="name" className="group-title">Nombre</label>
+          <input
+            type="text"
+            className="group-large-input"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
         
-              <input
-                type="text"
-                className="group-large-input"
-                placeholder="Título"
-                id="education_institution_title"
-                name="education_institution_title"
-                value={formData.education_institution_title}
-                onChange={handleChange}
-              />
-            </div>
+          <label htmlFor="summary" className="group-title">Resumen</label>
+          <textarea
+            id="summary"
+            name="summary"
+            value={formData.summary}
+            onChange={handleChange}
+          />
+        </section>
+        <section> 
+          <label className="group-title">Educación</label>
+          <div className="input-group">
+            <input
+              type="text"
+              className="group-large-input"
+              placeholder="Institución Educativa"
+              id="education_institution"
+              name="education_institution"
+              value={formData.education_institution}
+              onChange={handleChange}
+            />
 
-          <label htmlFor="education_startDate">Fecha de inicio</label>
+            <input
+              type="text"
+              className="group-large-input"
+              placeholder="Título"
+              id="education_institution_title"
+              name="education_institution_title"
+              value={formData.education_institution_title}
+              onChange={handleChange}
+            />
+          </div>
+
+
+          <label htmlFor="education_startDate" className='label-date'>Fecha de inicio</label>
           <div className="container-date">
             <input
               type="text"
               className="education-input date"
+              placeholder='Mes'
               id="education_startMonth"
               name="education_startMonth"
               value={formData.education_startMonth}
               onChange={handleChange}
             />
-            
+
             <input
               type="text"
               className="education-input date"
+              placeholder='Año'
               id="education_startYear"
               name="education_startYear"
               value={formData.education_startYear}
+              onChange={handleChange}
+            />
+          </div>
+
+          <label htmlFor="education_lastMonth" className='label-date'>Fecha de finalización</label>
+          <div className="container-date">
+            <input
+              type="text"
+              className="date"
+              placeholder='Mes'
+              id="education_lastMonth"
+              name="education_lastMonth"
+              value={formData.education_lastMonth}
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              className="date"
+              placeholder='Año'
+              id="education_lastYear"
+              name="education_lastYear"
+              value={formData.education_lastYear}
+              onChange={handleChange}
+            />
+          </div>
+        </section>
+
+        <section>
+          <p className="group-title">Certificaciones y cursos</p>
+          <label htmlFor="certification_company">Empresa emisora</label>
+          <input
+            type="text"
+            className="group-large-input"
+            id="certification_company"
+            name="certification_company"
+            value={formData.certification_company}
+            onChange={handleChange}
+          />
+
+          <label htmlFor="certification_name">Nombre de Certificación o curso</label>
+          <input
+            type="text"
+            className="group-large-input"
+            id="certification_name"
+            name="certification_name"
+            value={formData.certification_name}
+            onChange={handleChange}
+          />
+          <label htmlFor="education_startDate">Fecha de inicio</label>
+          <div className="container-date">
+            <input
+              type="text"
+              className="date"
+              placeholder='Mes'
+              id="certification_startMonth"
+              name="certification_startMonth"
+              value={formData.certification_startMonth}
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              className="date"
+              placeholder='Año'
+              id="certification_startYear"
+              name="certificationn_startYear"
+              value={formData.certification_startYear}
               onChange={handleChange}
             />
           </div>
@@ -156,157 +229,111 @@ export default function UploadCV() {
             <input
               type="text"
               className="date"
-              id="education_lastMonth"
-              name="education_lastMonth"
-              value={formData.education_lastMonth}
+              placeholder='Mes'
+              id="certification_lastMonth"
+              name="certification_lastMonth"
+              value={formData.certification_lastMonth}
               onChange={handleChange}
             />
-      
+
             <input
               type="text"
               className="date"
-              id="education_lastYear"
-              name="education_lastYear"
-              value={formData.education_lastYear}
+              placeholder='Año'
+              id="certification_lastYear"
+              name="certification_lastYear"
+              value={formData.certification_lastYear}
               onChange={handleChange}
             />
-          </div>  
+          </div>
         </section>
-        
 
-        <p className="group-title">Certificaciones y cursos</p>
-        <label htmlFor="certification_company">Empresa emisora</label>
-        <input
-          type="text"
-          className="group-large-input"
-          id="certification_company"
-          name="certification_company"
-          value={formData.certification_company}
-          onChange={handleChange}
-        />
-  
-        <label htmlFor="certification_name">Nombre de Certificación o curso</label>
-        <input
-          type="text"
-          className="group-large-input"
-          id="certification_name"
-          name="certification_name"
-          value={formData.certification_name}
-          onChange={handleChange}
-        />
-  <label htmlFor="education_startDate">Fecha de inicio</label>
-        <div className="container-date">
+        <section>
+          <p className="group-title">Experiencia laboral</p>
+          <label htmlFor="experience_nameCompany">Nombre de empresa</label>
           <input
             type="text"
-            className="date"
-            id="certification_startMonth"
-            name="certification_startMonth"
-            value={formData.certification_startMonth}
+            className="group-large-input"
+            id="experience_nameCompany"
+            name="experience_nameCompany"
+            value={formData.experience_nameCompany}
             onChange={handleChange}
           />
-          
-          <input
-            type="text"
-            className="date"
-            id="certification_startYear"
-            name="certificationn_startYear"
-            value={formData.certification_startYear}
-            onChange={handleChange}
-          />
-        </div>
 
-        <label htmlFor="education_lastMonth">Fecha de finalización</label>
-        <div className="container-date">
+          <label htmlFor="experience_position">Cargo</label>
           <input
             type="text"
-            className="date"
-            id="certification_lastMonth"
-            name="certification_lastMonth"
-            value={formData.certification_lastMonth}
+            className="group-large-input"
+            id="experience_position"
+            name="experience_position"
+            value={formData.experience_position}
             onChange={handleChange}
           />
-    
-          <input
-            type="text"
-            className="date"
-            id="certification_lastYear"
-            name="certification_lastYear"
-            value={formData.certification_lastYear}
-            onChange={handleChange}
-          />
-        </div>  
-  
-        <p className="group-title">Experiencia laboral</p>
-        <label htmlFor="experience_nameCompany">Nombre de empresa</label>
-        <input
-          type="text"
-          className="group-large-input"
-          id="experience_nameCompany"
-          name="experience_nameCompany"
-          value={formData.experience_nameCompany}
-          onChange={handleChange}
-        />
-  
-        <label htmlFor="experience_position">Cargo</label>
-        <input
-          type="text"
-          className="group-large-input"
-          id="experience_position"
-          name="experience_position"
-          value={formData.experience_position}
-          onChange={handleChange}
-        />
-  
-  <label htmlFor="education_startDate">Fecha de inicio</label>
-        <div className="container-date">
-          <input
-            type="text"
-            className="date"
-            id="experience_startMonth"
-            name="experience_startMonth"
-            value={formData.experience_startMonth}
-            onChange={handleChange}
-          />
-          
-          <input
-            type="text"
-            className="date"
-            id="experience_startYear"
-            name="experience_startYear"
-            value={formData.experience_startYear}experience
-            onChange={handleChange}
-          />
-        </div>
 
-        <label htmlFor="experience_lastMonth">Fecha de finalización</label>
-        <div className="container-date">
-          <input
-            type="text"
-            className="date"
-            id="experience_lastMonth"
-            name="experience_lastMonth"
-            value={formData.experience_lastMonth}
-            onChange={handleChange}
-          />
-    
-          <input
-            type="text"
-            className="date"
-            id="experience_lastYear"
-            name="experience_lastYear"
-            value={formData.experience_lastYear}certification
-            onChange={handleChange}
-          />
-        </div>  
-      <label htmlFor="knowledge" className="group-title">Conocimientos</label>
-      <textarea
-        id="knowledge"
-        name="knowledge"
-        value={formData.knowledge}
-        onChange={handleChange}
-      />
-    </form>
+          <label htmlFor="education_startDate">Fecha de inicio</label>
+          <div className="container-date">
+            <input
+              type="text"
+              className="date"
+              placeholder='Mes'
+              id="experience_startMonth"
+              name="experience_startMonth"
+              value={formData.experience_startMonth}
+              onChange={handleChange}
+            />
 
-    <button className="button-save" onClick={saveDataToAPI}>Guardar</button>
-  </div>
-)};
+            <input
+              type="text"
+              className="date"
+              placeholder='Año'
+              id="experience_startYear"
+              name="experience_startYear"
+              value={formData.experience_startYear} experience
+              onChange={handleChange}
+            />
+          </div>
+
+          <label htmlFor="experience_lastMonth">Fecha de finalización</label>
+          <div className="container-date">
+            <input
+              type="text"
+              className="date"
+              placeholder='Mes'
+              id="experience_lastMonth"
+              name="experience_lastMonth"
+              value={formData.experience_lastMonth}
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              className="date"
+              placeholder='Año'
+              id="experience_lastYear"
+              name="experience_lastYear"
+              value={formData.experience_lastYear} certification
+              onChange={handleChange}
+            />
+          </div>
+        </section>
+
+        <section>
+          <label htmlFor="knowledge" className="group-title">Conocimientos</label>
+          <div>
+          <button
+            id="knowledge"
+            name="knowledge"
+            value={formData.knowledge}
+            onChange={handleChange}
+          >React
+          </button>
+          </div>
+          <button>Añadir</button>
+        </section>
+      </form>
+
+      <button className="button-save" onClick={saveDataToAPI}>Guardar</button>
+
+    </div>
+  )
+};
