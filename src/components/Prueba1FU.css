@@ -4,6 +4,7 @@
     margin: 1rem 0 8rem 0;
 }
 
+
 .container-form {
     margin-bottom: 2rem;
 }
@@ -13,7 +14,7 @@ section {
 
 }
 
-.input-group {
+.main-input-group {
     margin: 0.8rem 0 0.8rem 0;
     /* Para establecer margin top y bottom luego de cada input-group */
     display: grid;
@@ -48,12 +49,14 @@ section {
     
 }
 
-#formCv input,
+/* Se hace referencia a los estilos dentro del div contener del form */
+#container-form input,
 textarea {
     border-radius: 0.5rem;
     border: 1px solid var(--Gris-claro-Bluetab, #DAD7CB);
     background: var(--Blanco, #FFF);
     color: var(--Gris-Bluetab, #675C53);
+    
 
     /* Cuerpo texto */
     font-size: 1rem;
@@ -62,6 +65,7 @@ textarea {
     line-height: 150%;
     /* 1.3125rem */
     letter-spacing: -0.00963rem;
+    padding: 0.5rem; /*  sangría para el texto */
 
 }
 
@@ -76,7 +80,7 @@ p {
     display: flex;
     width: 44.5rem;
     height: 7.125rem;
-    padding: 0.5rem; /*  sangría para el texto */
+    
     align-items: flex-start;
     gap: 0.625rem;
     flex-shrink: 0;
@@ -88,7 +92,9 @@ p {
     margin: 0.8rem 0 0.8rem 0;
 }
 
-.label-date {}
+.label-date {
+
+}
 
 .date {
     width: 21.369rem;
@@ -104,7 +110,6 @@ p {
     /* Ajusta el valor según tu preferencia de espacio */
 }
 
-input[type="text"] {}
 
 .button-save {
     display: flex;

@@ -88,7 +88,7 @@ export default function UploadCV() {
       <h1>Subir CV</h1>
       <FileUpload updateFormData={updateFormDataFromPDF} />
       {console.log(formData)}
-      <form className="container-form">
+      <form className="container-form" id="container-form">
         <section>
           <label htmlFor="name" className="group-title">Nombre</label>
           <input
@@ -99,7 +99,7 @@ export default function UploadCV() {
             value={formData.name}
             onChange={handleChange}
           />
-        
+
           <label htmlFor="summary" className="group-title">Resumen</label>
           <textarea
             id="summary"
@@ -108,9 +108,9 @@ export default function UploadCV() {
             onChange={handleChange}
           />
         </section>
-        <section> 
+        <section>
           <label className="group-title">Educación</label>
-          <div className="input-group">
+          <div className="main-input-group">
             <input
               type="text"
               className="group-large-input"
@@ -182,25 +182,27 @@ export default function UploadCV() {
 
         <section>
           <p className="group-title">Certificaciones y cursos</p>
-          <input
-            type="text"
-            className="group-large-input"
-            placeholder='Empresa emisora'
-            id="certification_company"
-            name="certification_company"
-            value={formData.certification_company}
-            onChange={handleChange}
-          />
+          <div className="main-input-group">
+            <input
+              type="text"
+              className="group-large-input"
+              placeholder='Empresa emisora'
+              id="certification_company"
+              name="certification_company"
+              value={formData.certification_company}
+              onChange={handleChange}
+            />
 
-          <input
-            type="text"
-            className="group-large-input"
-            placeholder='Nombre de la certificación o curso'
-            id="certification_name"
-            name="certification_name"
-            value={formData.certification_name}
-            onChange={handleChange}
-          />
+            <input
+              type="text"
+              className="group-large-input"
+              placeholder='Nombre de la certificación o curso'
+              id="certification_name"
+              name="certification_name"
+              value={formData.certification_name}
+              onChange={handleChange}
+            />
+          </div>
           <label htmlFor="education_startDate">Fecha de inicio</label>
           <div className="container-date">
             <input
@@ -250,28 +252,27 @@ export default function UploadCV() {
 
         <section>
           <p className="group-title">Experiencia laboral</p>
-          
-          <input
-            type="text"
-            className="group-large-input"
-            placeholder='Nombre de la empresa'
-            id="experience_nameCompany"
-            name="experience_nameCompany"
-            value={formData.experience_nameCompany}
-            onChange={handleChange}
-          />
+          <div className="main-input-group">
+            <input
+              type="text"
+              className="group-large-input"
+              placeholder='Nombre de la empresa'
+              id="experience_nameCompany"
+              name="experience_nameCompany"
+              value={formData.experience_nameCompany}
+              onChange={handleChange}
+            />
 
-          
-          <input
-            type="text"
-            className="group-large-input"
-            placeholder='Cargo'
-            id="experience_position"
-            name="experience_position"
-            value={formData.experience_position}
-            onChange={handleChange}
-          />
-
+            <input
+              type="text"
+              className="group-large-input"
+              placeholder='Cargo'
+              id="experience_position"
+              name="experience_position"
+              value={formData.experience_position}
+              onChange={handleChange}
+            />
+          </div>
           <label htmlFor="education_startDate">Fecha de inicio</label>
           <div className="container-date">
             <input
@@ -322,13 +323,13 @@ export default function UploadCV() {
         <section>
           <label htmlFor="knowledge" className="group-title">Conocimientos</label>
           <div>
-          <button
-            id="knowledge"
-            name="knowledge"
-            value={formData.knowledge}
-            onChange={handleChange}
-          >React
-          </button>
+            <button
+              id="knowledge"
+              name="knowledge"
+              value={formData.knowledge}
+              onChange={handleChange}
+            >React
+            </button>
           </div>
           <button>Añadir</button>
         </section>
