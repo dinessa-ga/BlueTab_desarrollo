@@ -1,83 +1,98 @@
-#formCv{
-    display: grid; place-items: center;
-}
-.container-form{
-    
-}
-
-section{
-    margin: 2rem 0 0 0;
-    
-}
-
-.input-group{
-    margin: 0.8rem 0 0 0; /* Para establecer margin top luego de cada input-group */
+#formCv {
     display: grid;
-    grid-row-gap: 0.4rem; /* Espacio vertical entre elementos en .input-group */
+    place-items: center;
+    margin: 1rem 0 8rem 0;
+}
+
+.container-form {
+    margin-bottom: 2rem;
+}
+
+section {
+    margin: 2rem 0 0 0;
+
+}
+
+.input-group {
+    margin: 0.8rem 0 0.8rem 0;
+    /* Para establecer margin top y bottom luego de cada input-group */
+    display: grid;
+    grid-row-gap: 0.3rem;
+    /* Espacio vertical entre elementos en .input-group */
 
 }
 
 
-.group-large-input{
+.group-large-input {
     display: flex;
     width: 44.5rem;
-    height: 2.375rem;
+    height: 2rem;
     padding: 0.5rem;
     align-items: flex-start;
     gap: 0.625rem;
     flex-shrink: 0;
-   
+
 
 
 }
 
-.group-title{
+.group-title {
     color: var(--Naranja-Bluetab, #E05206);
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%; /* 2.25rem */
+    line-height: 150%;
+    /* 2.25rem */
     letter-spacing: -0.0165rem;
+    text-transform: uppercase;
     
 }
 
-#formCv input, textarea{
+#formCv input,
+textarea {
     border-radius: 0.5rem;
     border: 1px solid var(--Gris-claro-Bluetab, #DAD7CB);
     background: var(--Blanco, #FFF);
     color: var(--Gris-Bluetab, #675C53);
 
     /* Cuerpo texto */
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 1.3125rem */
+    line-height: 150%;
+    /* 1.3125rem */
     letter-spacing: -0.00963rem;
+
 }
 
-#summary{
+label,
+input,
+p {
+
+    padding-left:0.5rem; ;
+}
+
+#summary {
     display: flex;
     width: 44.5rem;
     height: 7.125rem;
-    padding: 0.5rem;
+    padding: 0.5rem; /*  sangría para el texto */
     align-items: flex-start;
     gap: 0.625rem;
     flex-shrink: 0;
 }
 
-.label-Date{
-    margin: 4rem 0 0 0; /* Para establecer margin  a los label de fechas */
 
-}
-
-.container-date{
+.container-date {
     display: flex;
-    margin: 0;
+    margin: 0.8rem 0 0.8rem 0;
 }
 
-.date{
+.label-date {}
+
+.date {
     width: 21.369rem;
-    height: 2.375rem;
+    height: 2rem;
     padding: 0.5rem;
     align-items: flex-start;
     flex-shrink: 0;
@@ -85,23 +100,40 @@ section{
 
 /* Establece un margen derecho en el primer input*/
 .date:first-child {
-    margin-right: 0.41rem; /* Ajusta el valor según tu preferencia de espacio */
+    margin-right: 0.41rem;
+    /* Ajusta el valor según tu preferencia de espacio */
 }
 
-  input[type="text"]{
-    
-}
+input[type="text"] {}
 
-.button-save{
+.button-save {
     display: flex;
-    width: 8.5625rem;
+    width: 8rem;
     height: 2.375rem;
     padding: 0.625rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
     flex-shrink: 0;
-
+    border: none;
     border-radius: 1.5rem;
     background: var(--Azul-claro-Bluetab, #6F9AD3);
+
+   
+
+    color: var(--Blanco, #FFF);
+    text-align: center;
+    /* font-family: Titillium Web; */
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: -0.011rem;
+}
+
+.button-save:hover {
+    background: var(--Azul-Bluetab, #212492);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    /* Solo sobrescribe las propiedades que deseas cambiar en el estado :hover */
 }

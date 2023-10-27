@@ -133,7 +133,7 @@ export default function UploadCV() {
           </div>
 
 
-          <label htmlFor="education_startDate" className='label-date'>Fecha de inicio</label>
+          <label htmlFor="education_startDate"  >Fecha de inicio</label>
           <div className="container-date">
             <input
               type="text"
@@ -156,7 +156,7 @@ export default function UploadCV() {
             />
           </div>
 
-          <label htmlFor="education_lastMonth" className='label-date'>Fecha de finalización</label>
+          <label htmlFor="education_lastMonth" className="label-date">Fecha de finalización</label>
           <div className="container-date">
             <input
               type="text"
@@ -182,20 +182,20 @@ export default function UploadCV() {
 
         <section>
           <p className="group-title">Certificaciones y cursos</p>
-          <label htmlFor="certification_company">Empresa emisora</label>
           <input
             type="text"
             className="group-large-input"
+            placeholder='Empresa emisora'
             id="certification_company"
             name="certification_company"
             value={formData.certification_company}
             onChange={handleChange}
           />
 
-          <label htmlFor="certification_name">Nombre de Certificación o curso</label>
           <input
             type="text"
             className="group-large-input"
+            placeholder='Nombre de la certificación o curso'
             id="certification_name"
             name="certification_name"
             value={formData.certification_name}
@@ -250,20 +250,22 @@ export default function UploadCV() {
 
         <section>
           <p className="group-title">Experiencia laboral</p>
-          <label htmlFor="experience_nameCompany">Nombre de empresa</label>
+          
           <input
             type="text"
             className="group-large-input"
+            placeholder='Nombre de la empresa'
             id="experience_nameCompany"
             name="experience_nameCompany"
             value={formData.experience_nameCompany}
             onChange={handleChange}
           />
 
-          <label htmlFor="experience_position">Cargo</label>
+          
           <input
             type="text"
             className="group-large-input"
+            placeholder='Cargo'
             id="experience_position"
             name="experience_position"
             value={formData.experience_position}
