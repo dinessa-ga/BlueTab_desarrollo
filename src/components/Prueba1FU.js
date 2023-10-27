@@ -134,7 +134,7 @@ export default function UploadCV() {
           <div className="container-date">
             <input
               type="text"
-              className="input-date"
+              className="education-input date"
               id="education_startMonth"
               name="education_startMonth"
               value={formData.education_startMonth}
@@ -143,7 +143,7 @@ export default function UploadCV() {
             
             <input
               type="text"
-              className="input-date"
+              className="education-input date"
               id="education_startYear"
               name="education_startYear"
               value={formData.education_startYear}
@@ -155,7 +155,7 @@ export default function UploadCV() {
           <div className="container-date">
             <input
               type="text"
-              className="input-date"
+              className="date"
               id="education_lastMonth"
               name="education_lastMonth"
               value={formData.education_lastMonth}
@@ -164,7 +164,7 @@ export default function UploadCV() {
       
             <input
               type="text"
-              className="input-date"
+              className="date"
               id="education_lastYear"
               name="education_lastYear"
               value={formData.education_lastYear}
@@ -175,7 +175,7 @@ export default function UploadCV() {
         
 
         <p className="group-title">Certificaciones y cursos</p>
-        <label htmlFor="certification_company">Empresa de Certificación</label>
+        <label htmlFor="certification_company">Empresa emisora</label>
         <input
           type="text"
           className="group-large-input"
@@ -185,7 +185,7 @@ export default function UploadCV() {
           onChange={handleChange}
         />
   
-        <label htmlFor="certification_name">Nombre de Certificación</label>
+        <label htmlFor="certification_name">Nombre de Certificación o curso</label>
         <input
           type="text"
           className="group-large-input"
@@ -198,6 +198,7 @@ export default function UploadCV() {
         <div className="container-date">
           <input
             type="text"
+            className="date"
             id="certification_startMonth"
             name="certification_startMonth"
             value={formData.certification_startMonth}
@@ -206,6 +207,7 @@ export default function UploadCV() {
           
           <input
             type="text"
+            className="date"
             id="certification_startYear"
             name="certificationn_startYear"
             value={formData.certification_startYear}
@@ -217,6 +219,7 @@ export default function UploadCV() {
         <div className="container-date">
           <input
             type="text"
+            className="date"
             id="certification_lastMonth"
             name="certification_lastMonth"
             value={formData.certification_lastMonth}
@@ -225,6 +228,7 @@ export default function UploadCV() {
     
           <input
             type="text"
+            className="date"
             id="certification_lastYear"
             name="certification_lastYear"
             value={formData.certification_lastYear}
@@ -233,7 +237,7 @@ export default function UploadCV() {
         </div>  
   
         <p className="group-title">Experiencia laboral</p>
-        <label htmlFor="experience_nameCompany">Empresa de Experiencia</label>
+        <label htmlFor="experience_nameCompany">Nombre de empresa</label>
         <input
           type="text"
           className="group-large-input"
@@ -243,7 +247,7 @@ export default function UploadCV() {
           onChange={handleChange}
         />
   
-        <label htmlFor="experience_position">Cargo en Experiencia</label>
+        <label htmlFor="experience_position">Cargo</label>
         <input
           type="text"
           className="group-large-input"
@@ -257,6 +261,7 @@ export default function UploadCV() {
         <div className="container-date">
           <input
             type="text"
+            className="date"
             id="experience_startMonth"
             name="experience_startMonth"
             value={formData.experience_startMonth}
@@ -265,6 +270,7 @@ export default function UploadCV() {
           
           <input
             type="text"
+            className="date"
             id="experience_startYear"
             name="experience_startYear"
             value={formData.experience_startYear}experience
@@ -276,6 +282,7 @@ export default function UploadCV() {
         <div className="container-date">
           <input
             type="text"
+            className="date"
             id="experience_lastMonth"
             name="experience_lastMonth"
             value={formData.experience_lastMonth}
@@ -284,6 +291,7 @@ export default function UploadCV() {
     
           <input
             type="text"
+            className="date"
             id="experience_lastYear"
             name="experience_lastYear"
             value={formData.experience_lastYear}certification
@@ -299,6 +307,6 @@ export default function UploadCV() {
       />
     </form>
 
-    <button onClick={saveDataToAPI}>Guardar en el servidor</button>
+    <button className="button-save" onClick={saveDataToAPI}>Guardar</button>
   </div>
 )};
