@@ -32,12 +32,13 @@ section {
     align-items: flex-start;
     gap: 0.625rem;
     flex-shrink: 0;
-    
+
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
-  }
+}
 
 .group-title {
     color: var(--Naranja-Bluetab, #E05206);
@@ -48,7 +49,7 @@ input:focus, textarea:focus {
     /* 2.25rem */
     letter-spacing: -0.0165rem;
     text-transform: uppercase;
-    
+
 }
 
 /* Se hace referencia a los estilos dentro del div contener del form */
@@ -58,7 +59,7 @@ textarea {
     border: 1px solid var(--Gris-claro-Bluetab, #DAD7CB);
     background: var(--Blanco, #FFF);
     color: var(--Gris-Bluetab, #675C53);
-    
+
 
     /* Cuerpo texto */
     font-size: 1rem;
@@ -67,7 +68,8 @@ textarea {
     line-height: 150%;
     /* 1.3125rem */
     letter-spacing: -0.00963rem;
-    padding: 0.5rem; /*  sangría para el texto */
+    padding: 0.5rem;
+    /*  sangría para el texto */
 
 }
 
@@ -75,14 +77,15 @@ label,
 input,
 p {
 
-    padding-left:0.5rem; ;
+    padding-left: 0.5rem;
+    ;
 }
 
 #summary {
     display: flex;
     width: 44.5rem;
     height: 7.125rem;
-    
+
     align-items: flex-start;
     gap: 0.625rem;
     flex-shrink: 0;
@@ -107,6 +110,29 @@ p {
 .date:first-child {
     margin-right: 0.41rem;
     /* Ajusta el valor según tu preferencia de espacio */
+}
+
+button {
+    display: flex;
+    height: 2.375rem;
+    padding: 0.625rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    border-radius: 1.5rem;
+    border: 1px solid #6F9AD3;
+
+    color: #6F9AD3;
+    text-align: center;
+    font-family: Titillium Web;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: -0.011rem;
+
 }
 
 
@@ -134,8 +160,29 @@ p {
     letter-spacing: -0.011rem;
 }
 
-.button-save:hover {
+
+.button-save:hover,
+button:hover {
     background: var(--Azul-Bluetab, #212492);
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
     /* Solo sobrescribe las propiedades que deseas cambiar en el estado :hover */
+
+    color: var(--Blanco, #FFF);
+    text-align: center;
+    font-family: Titillium Web;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: -0.011rem;
+}
+
+.primary-line-knowledge {
+    margin-top: 1rem;
+    display: flex; /* Usar flexbox para alinear horizontalmente */
+  justify-content: center; /* Centrar los elementos horizontalmente */
+  align-items: center; /* Centrar los elementos verticalmente (opcional) */
+
+    
 }

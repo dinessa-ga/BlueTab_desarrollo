@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import FileUpload from './FileUdload';
 import './Prueba1FU.css';
 
+import KnowledgeSection from './KnowledgeSection';
+
 export default function UploadCV() {
   const [formData, setFormData] = useState({
     name: '',
@@ -321,18 +323,13 @@ export default function UploadCV() {
         </section>
 
         <section>
-          <label htmlFor="knowledge" className="group-title">Conocimientos</label>
-          <div>
-            <button
-              id="knowledge"
-              name="knowledge"
-              value={formData.knowledge}
-              onChange={handleChange}
-            >React
-            </button>
-          </div>
-          <button>Añadir</button>
+          {/* Renderiza el componente KnowledgeSection aquí y pasa los datos y la función de manejo de cambios */}
+      <KnowledgeSection formData={formData} handleChange={handleChange} />
         </section>
+
+
+
+
       </form>
 
       <button className="button-save" onClick={saveDataToAPI}>Guardar</button>
