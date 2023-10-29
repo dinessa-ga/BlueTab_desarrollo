@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Prueba1FU.css';
 
 function KnowledgeSection() {
     const [formData, setFormData] = useState({
@@ -39,22 +40,25 @@ function KnowledgeSection() {
                 Conocimientos y habilidades
             </label>
             <div className='primary-line-knowledge'>
-            <input
-                type="text"
-                name="knowledge"
-                value={inputValue}
-                onChange={handleChange}
-                placeholder="Ingrese un conocimiento"
-            />
-            <button onClick={addKnowledgeButton}>Añadir</button>
+                <div className="input-knowledge">
+                    <input
+                        type="text"
+
+                        name="knowledge"
+                        value={inputValue}
+                        onChange={handleChange}
+                        placeholder="Ingrese un conocimiento"
+                    />
+                </div>
+                <button className='button-add' onClick={addKnowledgeButton}>Añadir</button>
             </div>
             {formData.knowledge.map((value, index) => (
                 <div key={index}>
-                    <button onClick={() => handleKnowledgeClick(index)}>{value}</button>
+                    <button className="button-knowledge" onClick={() => handleKnowledgeClick(index)}>{value}</button>
                 </div>
             ))}
-            
-            
+
+
         </section>
     );
 }

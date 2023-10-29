@@ -52,7 +52,7 @@ textarea:focus {
 
 }
 
-/* Se hace referencia a los estilos dentro del div contener del form */
+/* Se hace referencia a los estilos dentro del div contenededor del form */
 #container-form input,
 textarea {
     border-radius: 0.5rem;
@@ -78,7 +78,7 @@ input,
 p {
 
     padding-left: 0.5rem;
-    ;
+
 }
 
 #summary {
@@ -112,35 +112,14 @@ p {
     /* Ajusta el valor según tu preferencia de espacio */
 }
 
-button {
+
+
+.button-save,
+.button-add {
     display: flex;
+
     height: 2.375rem;
-    padding: 0.625rem 1.5rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-
-    border-radius: 1.5rem;
-    border: 1px solid #6F9AD3;
-
-    color: #6F9AD3;
-    text-align: center;
-    font-family: Titillium Web;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%;
-    /* 1.5rem */
-    letter-spacing: -0.011rem;
-
-}
-
-
-.button-save {
-    display: flex;
-    width: 8rem;
-    height: 2.375rem;
-    padding: 0.625rem;
+    padding: 0 2rem 0 2rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
@@ -162,27 +141,70 @@ button {
 
 
 .button-save:hover,
-button:hover {
+.button-add:hover {
     background: var(--Azul-Bluetab, #212492);
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
     /* Solo sobrescribe las propiedades que deseas cambiar en el estado :hover */
 
     color: var(--Blanco, #FFF);
     text-align: center;
-    font-family: Titillium Web;
+    /* font-family: Titillium Web; */
     font-size: 1rem;
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
     /* 1.5rem */
     letter-spacing: -0.011rem;
+  
 }
+
+.button-knowledge {
+
+    height: 2.375rem;
+    padding: 0 2rem 0 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 1.5rem;
+    background: var(--Azul-Bluetab, #212492);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    /* Solo sobrescribe las propiedades que deseas cambiar en el estado :hover */
+
+    color: var(--Blanco, #FFF);
+    text-align: center;
+    /* font-family: Titillium Web; */
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    /* 1.5rem */
+    letter-spacing: -0.011rem;
+    
+    padding: 0 2rem 0 2rem;
+}
+
+
 
 .primary-line-knowledge {
     margin-top: 1rem;
-    display: flex; /* Usar flexbox para alinear horizontalmente */
-  justify-content: center; /* Centrar los elementos horizontalmente */
-  align-items: center; /* Centrar los elementos verticalmente (opcional) */
+    display: flex;
+    /* Usar flexbox para alinear horizontalmente */
+    justify-content: center;
+    /* Centrar los elementos horizontalmente */
+    align-items: center;
+    /* Centrar los elementos verticalmente (opcional) */
 
-    
+
 }
+
+.input-knowledge {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-knowledge input {
+    margin-right: 10px; /* Espacio entre elementos (opcional) */
+  }
+  
