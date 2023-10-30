@@ -91,17 +91,7 @@ const UploadCV = () => {
     <div id="formCv">
       <h1>Subir CV</h1>
       <FileUpload updateFormData={updateFormDataFromPDF} saveDataToAirtable={saveDataToAirtable} />
-      <form>
-        <label htmlFor="name">Nombre:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange} 
-        />
-      <FileUpload updateFormData={updateFormDataFromPDF} />
-      {console.log(formData)}
+       {console.log(formData)}
       <form className="container-form" id="container-form">
         <section>
           <label htmlFor="name" className="group-title">Nombre</label>
@@ -344,8 +334,6 @@ const UploadCV = () => {
 
       </form>
       <button onClick={() => saveDataToAirtable(formData)}>Guardar en Airtable</button> 
-
-      <button className="button-save" onClick={saveDataToAPI}>Guardar</button>
 
     </div>
   );
