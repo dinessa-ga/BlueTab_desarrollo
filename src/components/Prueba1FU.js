@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import FileUpload from './FileUdload';
+import base from './base';
+
+
 import './Prueba1FU.css';
 
 import KnowledgeSection from './KnowledgeSection';
 
-export default function UploadCV() {
+const UploadCV = () => {
   const [formData, setFormData] = useState({
     name: '',
     summary: '',
@@ -61,33 +64,42 @@ export default function UploadCV() {
 
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    
   };
 
-  const saveDataToAPI = async () => {
-    try {
-      console.log('Datos guardados en el servidor con éxito.');
-      // Aquí puedes enviar formData al servidor, si es necesario
-      // Aquí puedes enviar 'formData' al servidor con Axios u otra librería.
-    } catch (error) {
-      console.error('Error al guardar los datos en el servidor:', error);
-    }
+  const saveDataToAirtable = (data) => {
+   
+    base('Bluetab').create([
+      {
+        fields: {
+          name: data.name,
+          
+        },
+      },
+    ], 
+    
+    function (err, records) {
+      if (err) {
+        console.error('Error al guardar datos en Airtable:', err);
+        return;
+      }
+      console.log('Datos guardados en Airtable con éxito:', records);
+    });
   };
-
-  useEffect(() => {
-    if (apiData) {
-      // Realiza alguna acción cuando apiData cambie, si es necesario
-      // Realizar acciones adicionales si es necesario.
-    }
-  }, [apiData]);
 
   return (
     <div id="formCv">
       <h1>Subir CV</h1>
+      <FileUpload updateFormData={updateFormDataFromPDF} saveDataToAirtable={saveDataToAirtable} />
+      <form>
+        <label htmlFor="name">Nombre:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange} 
+        />
       <FileUpload updateFormData={updateFormDataFromPDF} />
       {console.log(formData)}
       <form className="container-form" id="container-form">
@@ -331,9 +343,10 @@ export default function UploadCV() {
 
 
       </form>
+      <button onClick={() => saveDataToAirtable(formData)}>Guardar en Airtable</button> 
 
       <button className="button-save" onClick={saveDataToAPI}>Guardar</button>
 
     </div>
-  )
-};
+  );
+}
